@@ -30,6 +30,8 @@ const RegistrationForm = () => {
         phone_number: phoneNumber,
         organization: selectedOrg
       })
+      setPhoneNumber("");
+      setSelectedOrg("");
     }
   };
 
