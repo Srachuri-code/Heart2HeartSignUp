@@ -1,0 +1,70 @@
+* RegistrationForm.css */
+
+/* Form container styles */
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  position: relative; /* Add this line to position the title */
+}
+
+/* Title styles within the form */
+.form-container h1 {
+  text-align: center;
+  color: red;
+  margin-bottom: 20px;
+}
+
+
+/* Form container styling */
+.registration-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 360px; /* Adjust width as needed */
+  padding: 20px;
+}
+
+/* Styling for input and select fields */
+.input-group {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+/* Input field styles */
+.registration-form input[type="tel"],
+.registration-form select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+/* Label styles (if needed) */
+.registration-form label {
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+/* Submit button styles */
+.registration-form button {
+  padding: 10px 20px;
+  background-color: red;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.registration-form button:hover {
+  background-color: darkred;
+}
+
+/* Placeholder text color for input fields */
+.registration-form input::placeholder {
+  color: gray;
+}
