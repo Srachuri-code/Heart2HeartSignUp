@@ -1,6 +1,8 @@
 // RegistrationForm.js
 import React, { useState } from 'react';
 import './RegistrationForm.css'; // Import the CSS file for styling
+import { db } from "./firebase";
+import { addDoc, collection } from 'firebase/firestore'
 
 const RegistrationForm = () => {
   const [phoneNumber, setPhoneNumber] = useState('');
@@ -19,11 +21,16 @@ const RegistrationForm = () => {
     setSelectedOrg(event.target.value);
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async(event) => {
     event.preventDefault();
     console.log('Phone Number:', phoneNumber);
     console.log('Selected Organization:', selectedOrg);
-    // You can add further processing or API calls here
+    if (RegistrationForm) {
+      await addDoc(collection(db, "input-group"),{
+        phone_number: phoneNumber,
+        organization: selectedOrg
+      })
+    }
   };
 
   return (
