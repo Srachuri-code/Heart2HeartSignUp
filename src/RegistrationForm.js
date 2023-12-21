@@ -36,7 +36,7 @@ const RegistrationForm = () => {
 
   return (
     <div className="form-container">
-      {/* <h1>Heart2Heart</h1> */}
+      <h1>Heart2Heart</h1>
       <form onSubmit={handleSubmit} className="registration-form">
         <div className="input-group">
           <input

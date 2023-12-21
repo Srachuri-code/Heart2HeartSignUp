@@ -18,8 +18,28 @@
 
 .bottom-right-image {
   position: absolute;
-  bottom: 10px;
-  right: 10px;
-  width: 300px;
+  bottom: 0px;
+  right: 0px;
+  width: 500px;
   height: auto;
+}
+
+@media screen and (max-width: 767px) {
+  .app-container {
+    padding: 20px; /* Add padding to create space around elements */
+  }
+
+  .bottom-right-image {
+    width: 100%; /* Make the image responsive to smaller screens */
+    position: static; /* Adjust positioning for mobile */
+  }
+
+  .registration-form {
+    max-width: 100%; /* Allow the form to take the full width */
+  }
+
+  .registration-form h1 {
+    /* Adjust styles for the title on mobile */
+    font-size: 24px; /* Example: Reduce font size for smaller screens */
+  }
 }
