@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import './RegistrationForm.css'; // Import the CSS file for styling
 import { db } from "./firebase";
-import { addDoc, collection } from 'firebase/firestore'
+import { addDoc, collection, serverTimestamp } from 'firebase/firestore'
 
 const RegistrationForm = () => {
   const [phoneNumber, setPhoneNumber] = useState('');
@@ -23,12 +23,11 @@ const RegistrationForm = () => {
 
   const handleSubmit = async(event) => {
     event.preventDefault();
-    console.log('Phone Number:', phoneNumber);
-    console.log('Selected Organization:', selectedOrg);
     if (RegistrationForm) {
       await addDoc(collection(db, "input-group"),{
         phone_number: phoneNumber,
-        organization: selectedOrg
+        organization: selectedOrg,
+        timestamp: serverTimestamp(),
       })
       setPhoneNumber("");
       setSelectedOrg("");
