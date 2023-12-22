@@ -34,13 +34,20 @@
 }
 
 /* Input field styles */
-.registration-form input[type="tel"],
-.registration-form select {
-  width: 100%;
-  padding: 10px;
+.registration-form input[type="tel"]{
+  width: 289px;
+  padding: 30px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  font-size: 16px;
+  font-size: 20px;
+}
+
+.registration-form select {
+  width: 350px;
+  padding: 30px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 20px;
 }
 
 /* Label styles (if needed) */
@@ -51,13 +58,13 @@
 
 /* Submit button styles */
 .registration-form button {
-  padding: 10px 20px;
+  padding: 20px 60px;
   background-color: #c41e3aff;
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 20px;
 }
 
 .registration-form button:hover {
@@ -75,6 +82,7 @@
 
 .description-text {
   font-family: 'Impact', sans-serif;
+  font-size: 24px;
 }
 
 .title {

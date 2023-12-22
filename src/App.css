@@ -7,6 +7,7 @@
   align-items: center;
   justify-content: center;
   min-height: 100vh;
+  padding: 0;
 }
 
 /* Remove the absolute positioning from h1 in App.css */
@@ -15,24 +16,18 @@
   text-align: center;
   color: #c41e3aff;
   font-family: 'Impact', sans-serif;
-}
-
-.bottom-right-image {
-  position: absolute;
-  bottom: 0px;
-  right: 0px;
-  width: 200px;
-  height: auto;
+  font-size: 100px;
 }
 
 @media screen and (max-width: 767px) {
   .app-container {
-    padding: 20px; /* Add padding to create space around elements */
+    flex-direction: column; /* Stack elements vertically on small screens */
   }
 
   .bottom-right-image {
-    width: 100%; /* Make the image responsive to smaller screens */
-    position: static; /* Adjust positioning for mobile */
+    width: 100%; /* Full width for the image on small screens */
+    position: static; /* Normal flow, no absolute positioning */
+    height: auto; /* Keep the aspect ratio of the image */
   }
 
   .registration-form {
@@ -40,7 +35,30 @@
   }
 
   .registration-form h1 {
-    /* Adjust styles for the title on mobile */
-    font-size: 24px; /* Example: Reduce font size for smaller screens */
+    font-size: 24px; /* Adjust font size for smaller screens */
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .app-container {
+    flex-direction: row; /* Side-by-side layout on larger screens */
+  }
+
+  .registration-form, .bottom-right-image {
+    flex: 1; /* Each takes half the width of the container */
+    max-width: 50%; /* Maximum width set to half of the container */
+  }
+
+  .registration-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .bottom-right-image {
+    position: relative; /* Override absolute positioning */
+    height: 100vh; /* Keep the aspect ratio */
+    object-fit: contain; /* Ensure the entire image is visible */
   }
 }
