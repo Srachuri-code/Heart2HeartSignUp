@@ -13,14 +13,15 @@
 .app-container h1 {
   margin: 0;
   text-align: center;
-  color: red;
+  color: #c41e3aff;
+  font-family: 'Impact', sans-serif;
 }
 
 .bottom-right-image {
   position: absolute;
   bottom: 0px;
   right: 0px;
-  width: 350px;
+  width: 200px;
   height: auto;
 }
 

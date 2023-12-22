@@ -13,7 +13,7 @@
 /* Title styles within the form */
 .form-container h1 {
   text-align: center;
-  color: red;
+  color: #c41e3aff;
   margin-bottom: 20px;
 }
 
@@ -52,7 +52,7 @@
 /* Submit button styles */
 .registration-form button {
   padding: 10px 20px;
-  background-color: red;
+  background-color: #c41e3aff;
   color: white;
   border: none;
   border-radius: 5px;
@@ -61,10 +61,25 @@
 }
 
 .registration-form button:hover {
-  background-color: darkred;
+  background-color: #c41e3aff;
 }
 
 /* Placeholder text color for input fields */
 .registration-form input::placeholder {
   color: gray;
+}
+
+.description-container {
+  text-align: center;
+}
+
+.description-text {
+  font-family: 'Impact', sans-serif;
+}
+
+.title {
+  font-family: 'Impact', sans-serif; /* Apply Impact font */
+  text-align: center;
+  color: #c41e3aff;
+  /* Optional: Adjust font size, color, etc. */
 }

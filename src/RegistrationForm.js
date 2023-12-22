@@ -36,7 +36,12 @@ const RegistrationForm = () => {
 
   return (
     <div className="form-container">
-      <h1>Heart2Heart</h1>
+    <h1 className="title">Heart2Heart</h1>
+    <div className="description-container">
+      <p className="description-text">
+        A text message-based social network designed to encourage cardiovascular disease prevention
+      </p>
+    </div>
       <form onSubmit={handleSubmit} className="registration-form">
         <div className="input-group">
           <input
