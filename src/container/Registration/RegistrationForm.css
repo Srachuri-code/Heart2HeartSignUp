@@ -94,3 +94,17 @@
   color: #c41e3aff;
   /* Optional: Adjust font size, color, etc. */
 }
+
+@media screen and (min-width: 900px) {
+
+  .title{
+    padding-top: 10%;
+    padding-right: 5%;
+  }
+
+  .description-text{
+    padding-right: 5%;
+   
+  }
+
+}

@@ -1,5 +1,4 @@
 /* App.css */
-
 .app-container {
   display: flex;
   flex-direction: column;
@@ -30,7 +29,15 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+}
+
+
+
+
+@media screen and (max-width: 899px) {
+  .registration-form {
+    justify-content: center;
+  }
 }
 
 /* Styles for larger screens */
@@ -52,6 +59,7 @@
     width: auto; /* Width based on content */
     max-height: 100vh; /* Maximum height */
     object-fit: contain; /* Preserve aspect ratio */
+    flex: 1;
   }
 
   .form_container {
