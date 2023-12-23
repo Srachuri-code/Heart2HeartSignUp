@@ -15,6 +15,7 @@
   text-align: center;
   color: #c41e3aff;
   margin-bottom: 20px;
+  font-size: 70px;
 }
 
 
@@ -24,7 +25,7 @@
   flex-direction: column;
   align-items: center;
   width: 360px; /* Adjust width as needed */
-  padding: 20px;
+  padding-left: 10px;
 }
 
 /* Styling for input and select fields */
@@ -83,6 +84,8 @@
 .description-text {
   font-family: 'Impact', sans-serif;
   font-size: 24px;
+  padding-left: 20px;
+  padding-right: 10px;
 }
 
 .title {

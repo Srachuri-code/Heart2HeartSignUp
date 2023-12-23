@@ -6,7 +6,7 @@
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  padding: 20px;
+  padding: 0px;
 }
 
 .app-container h1 {
@@ -21,6 +21,7 @@
   height: auto;
   align-self: flex-end;
   margin-top: 20px;
+
 }
 
 .registration-form {
