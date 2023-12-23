@@ -1,64 +1,62 @@
 /* App.css */
 
 .app-container {
-  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  padding: 0;
+  padding: 20px;
 }
 
-/* Remove the absolute positioning from h1 in App.css */
 .app-container h1 {
   margin: 0;
   text-align: center;
   color: #c41e3aff;
   font-family: 'Impact', sans-serif;
-  font-size: 100px;
 }
 
-@media screen and (max-width: 767px) {
+.bottom-right-image {
+  width: 100%;
+  height: auto;
+  align-self: flex-end;
+  margin-top: 20px;
+}
+
+.registration-form {
+  width: 100%;
+  max-width: 360px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Styles for larger screens */
+@media screen and (min-width: 900px) {
   .app-container {
-    flex-direction: column; /* Stack elements vertically on small screens */
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end; /* Align items to the bottom */
+  }
+
+  .registration-form {
+    flex: 1; /* Allow the form to grow */
+    margin-right: 20px; /* Space between form and image */
+    align-self: center; /* Center the form vertically */
   }
 
   .bottom-right-image {
-    width: 100%; /* Full width for the image on small screens */
-    position: static; /* Normal flow, no absolute positioning */
-    height: auto; /* Keep the aspect ratio of the image */
+    max-width: none; /* Remove max-width */
+    width: auto; /* Width based on content */
+    max-height: 100vh; /* Maximum height */
+    object-fit: contain; /* Preserve aspect ratio */
   }
 
-  .registration-form {
-    max-width: 100%; /* Allow the form to take the full width */
-  }
-
-  .registration-form h1 {
-    font-size: 24px; /* Adjust font size for smaller screens */
-  }
-}
-
-@media screen and (min-width: 768px) {
-  .app-container {
-    flex-direction: row; /* Side-by-side layout on larger screens */
-  }
-
-  .registration-form, .bottom-right-image {
-    flex: 1; /* Each takes half the width of the container */
-    max-width: 50%; /* Maximum width set to half of the container */
-  }
-
-  .registration-form {
+  .form_container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .bottom-right-image {
-    position: relative; /* Override absolute positioning */
-    height: 100vh; /* Keep the aspect ratio */
-    object-fit: contain; /* Ensure the entire image is visible */
+    align-self: center;
+    justify-self: center;
   }
 }
