@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './RegistrationForm.css'; // Import the CSS file for styling
-import { db } from "./firebase";
+import { db } from "../../firebase";
 import { addDoc, collection, serverTimestamp } from 'firebase/firestore';
 
 const RegistrationForm = () => {
