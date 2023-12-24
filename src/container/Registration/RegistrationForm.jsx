@@ -1,11 +1,9 @@
-// RegistrationForm.jsx
-
 import React, { useState } from 'react';
 import './RegistrationForm.css';
 import { db } from "../../firebase";
 import { addDoc, collection, serverTimestamp } from 'firebase/firestore';
 
-const RegistrationForm = () => {
+const RegistrationForm = ({ onFormSubmit }) => {
   const [phoneNumber, setPhoneNumber] = useState('');
   const [selectedOrg, setSelectedOrg] = useState('');
   const [submitted, setSubmitted] = useState(false); // State to track submission
@@ -43,10 +41,9 @@ const RegistrationForm = () => {
         });
         setPhoneNumber("");
         setSelectedOrg("");
-        setSubmitted(true); // Set submitted to true after form submission
+        onFormSubmit();
       } catch (error) {
         console.error("Error submitting form:", error);
-        // Handle error state or display error message
       }
     } else {
       setPhoneNumberError('Please enter a valid 10-digit phone number!');
