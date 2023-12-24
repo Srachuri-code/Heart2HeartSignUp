@@ -95,6 +95,8 @@
   /* Optional: Adjust font size, color, etc. */
 }
 
+
+
 @media screen and (min-width: 900px) {
 
   .title{
@@ -106,5 +108,6 @@
     padding-right: 5%;
    
   }
+
 
 }

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Registration, Header } from './container';
+import { Registration, Header, ThankYouPage } from './container';
 import { images } from './constants';
 import './App.css';
 
@@ -13,7 +13,7 @@ function App() {
       <img src={images.bottomRightImage} alt="Bottom right image" className="bottom-right-image" />
     
 
-    </div>
+   </div>
   );
 }
 

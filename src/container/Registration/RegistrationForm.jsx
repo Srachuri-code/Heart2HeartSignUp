@@ -1,5 +1,7 @@
+// RegistrationForm.jsx
+
 import React, { useState } from 'react';
-import './RegistrationForm.css'; // Import the CSS file for styling
+import './RegistrationForm.css';
 import { db } from "../../firebase";
 import { addDoc, collection, serverTimestamp } from 'firebase/firestore';
 
@@ -7,6 +9,7 @@ const RegistrationForm = () => {
   const [phoneNumber, setPhoneNumber] = useState('');
   const [selectedOrg, setSelectedOrg] = useState('');
   const [submitted, setSubmitted] = useState(false); // State to track submission
+  const [phoneNumberError, setPhoneNumberError] = useState('');
 
   const organizations = [
     'Cardiovascular Health Education Campaign'
@@ -14,7 +17,15 @@ const RegistrationForm = () => {
   ];
 
   const handlePhoneNumberChange = (event) => {
-    setPhoneNumber(event.target.value);
+    const number = event.target.value.replace(/\D/g, ''); // Remove non-numeric characters
+    if (number.length <= 10) {
+      setPhoneNumber(number);
+      if (number.length === 10) {
+        setPhoneNumberError(''); // Clear the error when the phone number is correct
+      }
+    } else {
+      setPhoneNumberError('Please enter a valid 10-digit phone number!');
+    }
   };
 
   const handleOrgChange = (event) => {
@@ -23,15 +34,22 @@ const RegistrationForm = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    if (RegistrationForm) {
-      await addDoc(collection(db, "input-group"), {
-        phone_number: phoneNumber,
-        organization: selectedOrg,
-        timestamp: serverTimestamp(),
-      });
-      setPhoneNumber("");
-      setSelectedOrg("");
-      setSubmitted(true); // Set submitted to true after form submission
+    if (phoneNumber.length === 10) {
+      try {
+        await addDoc(collection(db, "input-group"), {
+          phone_number: phoneNumber,
+          organization: selectedOrg,
+          timestamp: serverTimestamp(),
+        });
+        setPhoneNumber("");
+        setSelectedOrg("");
+        setSubmitted(true); // Set submitted to true after form submission
+      } catch (error) {
+        console.error("Error submitting form:", error);
+        // Handle error state or display error message
+      }
+    } else {
+      setPhoneNumberError('Please enter a valid 10-digit phone number!');
     }
   };
 
@@ -59,6 +77,7 @@ const RegistrationForm = () => {
                 placeholder="Enter your phone number"
                 required
               />
+              {phoneNumberError && <span className="error-message">{phoneNumberError}</span>}
             </div>
             <div className="input-group">
               <select
